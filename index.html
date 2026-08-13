@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trackly - Bus Tracker</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+       <img src="713fcc39-3a97-488a-ab2f-6683b12ed554-removebg-preview.png" alt="Trackly Logo" class="logo">
+        <h1>Trackly</h1>
+    </div>
+
+    <div class="card">
+        <div id="map"></div>
+    </div>
+
+    <div class="card row">
+        <input type="text" id="busSearch" placeholder="Enter bus route (e.g. M15, B44)">
+        <button onclick="searchBus()">Search</button>
+    </div>
+
+    <div class="card">
+        <h2>Bus Info</h2>
+        <p><strong>Route:</strong> <span id="route">--</span></p>
+        <p><strong>Status:</strong> <span id="status">--</span></p>
+        <p><strong>Closest Bus:</strong> <span id="distance">--</span></p>
+        <p><strong>Arrival:</strong> <span id="arrival">--</span></p>
+        <p><strong>Next Stop:</strong> <span id="nextStop">--</span></p>
+    </div>
+
+    <div class="card row">
+        <button onclick="findLocation()">My Location</button>
+        <button id="themeBtn" onclick="toggleTheme()">Light Mode</button>
+        <button onclick="refreshBus()">Refresh</button>
+    </div>
+
+    <div class="card">
+        <h2>Live Chat</h2>
+
+        <div id="chat-messages"></div>
+
+        <div class="row">
+            <input id="chat-input" type="text" placeholder="Type a message...">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="init-firebase.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

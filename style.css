@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 15px;
+}
+
+body.light-mode {
+    background: #f4f4f9;
+    color: #121212;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #2e2e2e;
+}
+
+body.light-mode .card {
+    background: white;
+    border-color: #e0e0e0;
+}
+
+#map {
+    height: 320px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: white;
+    font-size: 14px;
+}
+
+body.light-mode input {
+    background: #f0f0f0;
+    color: #121212;
+    border-color: #ccc;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+#chat-messages {
+    height: 130px;
+    overflow-y: auto;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+body.light-mode #chat-messages {
+    background: #f0f0f0;
+}
+
+#chat-messages p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.user-marker-dot {
+    background: #2563eb;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.bus-marker-badge {
+    background: #eab308;
+    color: black;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    .row {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+}
