@@ -1,0 +1,14 @@
+{
+  "name": "trackly-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trackly NYC bus tracker with route directions, nearest bus, arrival estimates, and rider chat",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

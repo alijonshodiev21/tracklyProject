@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+
+  <title>Trackly | Your ride, right on time</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="brand" aria-label="Trackly home">
+        <img
+          src="./713fcc39-3a97-488a-ab2f-6683b12ed554-removebg-preview.png"
+          class="brand-logo"
+          alt="Trackly — Your ride, right on time"
+        >
+      </a>
+
+      <div class="header-actions">
+        <button
+          id="locationButton"
+          class="button button-secondary"
+          type="button"
+        >
+          <span class="button-icon">◎</span>
+          My Location
+        </button>
+
+        <button
+          id="themeButton"
+          class="button button-secondary"
+          type="button"
+        >
+          ☾ Dark Mode
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <section class="welcome-section">
+      <div class="welcome-copy">
+        <p class="eyebrow">NYC TRANSIT TRACKER</p>
+        <h1>Your ride. Your route.</h1>
+        <p class="subtitle">
+          Find nearby buses and check their estimated arrival times.
+        </p>
+      </div>
+
+      <div class="live-label">
+        <span class="live-dot"></span>
+        Live transit data
+      </div>
+    </section>
+
+    <section class="panel search-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Find your bus</h2>
+          <p>Choose your route and destination.</p>
+        </div>
+      </div>
+
+      <form id="routeForm" class="search-form">
+        <div class="field-group">
+          <label for="routeInput">Bus route</label>
+          <input
+            id="routeInput"
+            type="text"
+            value="B82"
+            placeholder="Example: B82"
+            maxlength="8"
+            autocomplete="off"
+            required
+          >
+        </div>
+
+        <div class="field-group">
+          <label for="directionSelect">Direction</label>
+          <select id="directionSelect">
+            <option value="all">All destinations</option>
+          </select>
+        </div>
+
+        <button
+          id="searchButton"
+          type="submit"
+          class="button button-primary"
+        >
+          Find Bus <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <p class="search-note">
+        Select a route to find the nearest bus currently reporting its location.
+      </p>
+    </section>
+
+    <section class="panel map-section">
+      <div class="section-heading">
+        <div>
+          <h2>Live Map</h2>
+          <p>See your location and the nearest bus.</p>
+        </div>
+
+        <span id="busCount" class="count-pill">Loading...</span>
+      </div>
+
+      <div class="map-wrapper">
+        <div
+          id="map"
+          aria-label="Map showing buses and your location"
+        ></div>
+      </div>
+
+      <div class="map-footer">
+        <span class="map-footer-icon">●</span>
+        <p id="busStatus" class="status-message" role="status">
+          Loading transit information...
+        </p>
+      </div>
+
+      <p
+        id="locationHelp"
+        class="location-help"
+        role="status"
+        hidden
+      ></p>
+
+      <p id="updatedAt" class="tiny muted">
+        Waiting for transit data...
+      </p>
+    </section>
+
+    <section class="panel arrival-section">
+      <div class="section-heading">
+        <div>
+          <h2>Your Nearest Bus</h2>
+          <p>One bus at a time, so the map stays clear.</p>
+        </div>
+      </div>
+
+      <div id="arrivalList" class="arrival-list">
+        <div class="empty-state">
+          Looking for your nearest bus...
+        </div>
+      </div>
+    </section>
+
+    <section class="panel chat-section">
+      <div class="section-heading">
+        <div>
+          <h2>Rider Community</h2>
+          <p>Share delays and updates with other riders.</p>
+        </div>
+
+        <span class="count-pill">Community chat</span>
+      </div>
+
+      <div class="chat-panel">
+        <div id="chatStatus" class="chat-status" role="status">
+          Connecting to chat...
+        </div>
+
+        <div
+          id="chatMessages"
+          class="chat-messages"
+          role="log"
+          aria-live="polite"
+        >
+          <p class="empty-state">Loading messages...</p>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <input
+            id="chatName"
+            type="text"
+            maxlength="24"
+            value="Rider"
+            placeholder="Your name"
+            aria-label="Your name"
+            autocomplete="nickname"
+          >
+
+          <input
+            id="chatInput"
+            type="text"
+            maxlength="300"
+            placeholder="Share a transit update..."
+            aria-label="Chat message"
+            autocomplete="off"
+            required
+          >
+
+          <button
+            id="sendButton"
+            type="submit"
+            class="button button-primary"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+
+      <p class="chat-note">
+        Keep personal information private and be respectful to other riders.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <a href="/" class="footer-brand">Trackly</a>
+      <p>Your ride, right on time.</p>
+      <p class="footer-disclaimer">
+        Bus locations and arrival estimates depend on data provided by the MTA.
+      </p>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
