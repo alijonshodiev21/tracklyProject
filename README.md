@@ -25,14 +25,6 @@ The idea for Trackly came from experiencing a long train delay while traveling t
 - Add report verification to make community updates more reliable.
 - Bring more commuting tools into one convenient platform.
 
-## Running Trackly Locally
-1. Clone or download this repository.
-2. Install the required dependencies using `npm install`.
-3. Start the server using the command configured in `package.json`.
-4. Open the local address shown by the server in your browser.
-
-Some features may require API configuration or Firebase setup.
-
 ## Created By
 Alijon Shodiev
 
